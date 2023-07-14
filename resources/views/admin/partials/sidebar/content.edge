@@ -1,0 +1,29 @@
+<div class="py-4 text-gray-500 dark:text-gray-400">
+    <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="{{route('admin.main')}}">Windmill</a>
+    <ul class="mt-6">
+        @component('admin/components/sidebar_item', {
+        active: request.matchesRoute('admin.main'),
+        text: 'Dashboard',
+        href: route('admin.main')
+        })
+        @!svg.dashboard()
+        @end
+
+        @component('admin/components/sidebar_item', {
+        text: 'Usuários',
+        href: route('admin_users.index'),
+        items: [
+            {
+                text: 'Ver todos',
+                href: route('admin_users.index'),
+            },
+            {
+                text: 'Adicionar novo',
+                href: route('admin_users.create'),
+            },
+        ]
+        })
+        @!svg.users()
+        @end
+    </ul>
+</div>

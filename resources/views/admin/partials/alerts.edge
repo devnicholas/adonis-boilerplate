@@ -1,0 +1,34 @@
+@if(flashMessages.has('success'))
+@!component('admin/components/alert', {
+type: 'success',
+message: flashMessages.get('success')
+})
+@endif
+
+@if(flashMessages.has('error'))
+@!component('admin/components/alert', {
+type: 'danger',
+message: flashMessages.get('error')
+})
+@endif
+
+@if(flashMessages.has('info'))
+@!component('admin/components/alert', {
+type: 'info',
+message: flashMessages.get('info')
+})
+@endif
+
+@if(flashMessages.has('warning'))
+@!component('admin/components/alert', {
+type: 'warning',
+message: flashMessages.get('warning')
+})
+@endif
+
+@each(error in flashMessages.get('errors'))
+@!component('admin/components/alert', {
+type: 'danger',
+message: error
+})
+@end

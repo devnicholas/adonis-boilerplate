@@ -1,0 +1,12 @@
+<!-- Theme toggler -->
+<li class="flex">
+    <button class="rounded-md focus:outline-none focus:shadow-outline-purple" @click="theme.toggle"
+        aria-label="Toggle color mode">
+        <template x-if="!theme.dark">
+            @!svg.dark()
+        </template>
+        <template x-if="theme.dark">
+            @!svg.light()
+        </template>
+    </button>
+</li>

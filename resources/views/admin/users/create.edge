@@ -1,0 +1,48 @@
+@layout('layouts/admin')
+
+@set('title', 'Usuários')
+
+@section('body')
+<div class="container grid px-6 mx-auto">
+    <div class="flex justify-between items-center">
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Adicionar
+        </h2>
+    </div>
+
+
+    <form method="POST" action="{{ route('admin_users.store')}}"
+        class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <label class="block text-sm">
+            <span class="text-gray-700 dark:text-gray-400">Nome</span>
+            <input name="name" class="form-text" placeholder="Jane Doe"
+                value="{{ flashMessages.has('name') ? flashMessages.get('name') : '' }}" />
+        </label>
+        <label class="block text-sm mt-4">
+            <span class="text-gray-700 dark:text-gray-400">E-mail</span>
+            <input name="email" type="email" class="form-text" placeholder="mail@example.com"
+                value="{{ flashMessages.has('email') ? flashMessages.get('email') : '' }}" required />
+        </label>
+        <label class="block mt-4 text-sm">
+            <span class="text-gray-700 dark:text-gray-400">
+                Permissão
+            </span>
+            <select name="role"
+                class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                <option value="member">Membro</option>
+                <option value="admin">Administrador</option>
+            </select>
+        </label>
+        <label class="block text-sm mt-4">
+            <span class="text-gray-700 dark:text-gray-400">Senha</span>
+            <input name="password" type="password" class="form-text" placeholder="***************" required />
+        </label>
+
+        <div class="mt-4 flex justify-end">
+            <button class="btn-default">Salvar</button>
+        </div>
+    </form>
+</div>
+
+
+@end

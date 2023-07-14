@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.form-input {
+  @apply border border-cool-gray-200 rounded;
+}
+.form-select {
+  @apply border border-cool-gray-200 rounded;
+}
+.form-text {
+  @apply block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input;
+}
+
+.alert {
+  @apply flex items-center p-4 mb-4 rounded-lg;
+}
+.alert-info {
+  @apply alert text-blue-800 bg-blue-50 dark:bg-blue-800 dark:text-blue-400;
+}
+.alert-danger {
+  @apply alert text-red-800 bg-red-50 dark:bg-red-800 dark:text-red-400;
+}
+.alert-success {
+  @apply alert text-green-800 bg-green-50 dark:bg-green-800 dark:text-green-400;
+}
+.alert-warning {
+  @apply alert text-yellow-800 bg-yellow-50 dark:bg-yellow-800 dark:text-yellow-400;
+}
+.alert-info button {
+  @apply bg-blue-50 text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:text-blue-400 dark:bg-blue-800;
+}
+.alert-danger button {
+  @apply bg-red-50 text-red-500 focus:ring-red-400 hover:bg-red-200 dark:text-red-400 dark:bg-red-800;
+}
+.alert-success button {
+  @apply bg-green-50 text-green-500 focus:ring-green-400 hover:bg-green-200 dark:text-green-400 dark:bg-green-800;
+}
+.alert-warning button {
+  @apply bg-yellow-50 text-yellow-500 focus:ring-yellow-400 hover:bg-yellow-200 dark:text-yellow-400 dark:bg-yellow-800;
+}
+
+.btn-default {
+  @apply px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple;
+}

@@ -1,0 +1,67 @@
+@layout('layouts/admin')
+
+@set('title', 'Usuários')
+
+@section('body')
+<div class="container grid px-6 mx-auto">
+    <div class="flex justify-between items-center">
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Usuários
+        </h2>
+        <a href="{{ route('admin_users.create')}}" class="btn-default">Adicionar</a>
+    </div>
+
+
+    <div class="w-full overflow-hidden rounded-lg shadow-xs">
+        <div class="w-full overflow-x-auto">
+            <table class="w-full whitespace-no-wrap">
+                <thead>
+                    <tr
+                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                        <th class="px-4 py-3">Nome</th>
+                        <th class="px-4 py-3">E-mail</th>
+                        <th class="px-4 py-3">Data de cadastro</th>
+                        <th class="px-4 py-3"></th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                    @each(user in users)
+                    <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3">
+                            {{ user.name }}
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            {{ user.email }}
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            {{ user.createdAt.toFormat('dd/MM/yyyy') }}
+                        </td>
+                        <td class="px-4 py-3">
+                            <div class="flex items-center space-x-4 text-sm">
+                                <a
+                                    href="{{ route('admin_users.edit', { id: user.id })}}"
+                                    class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                    aria-label="Edit">
+                                    @!svg.edit()
+                                </a>
+                                <form action="{{ route('admin_users.destroy', { id: user.id }, { qs: { _method: 'DELETE' }})}}" method="post">
+                                    <button
+                                    class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                    aria-label="Delete">
+                                    @!svg.delete()
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    @end
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+@end
