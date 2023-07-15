@@ -1,5 +1,5 @@
-# Starter Template
-This is a starter template for AdonisJS with this features:
+# Adonis Boilerplate
+This is a boilerplate for AdonisJS with this features:
 
 - Admin inteface baseed on [Windmill](https://github.com/estevanmaito/windmill-dashboard)
 - [TailwindCSS](https://tailwindcss.com/)
