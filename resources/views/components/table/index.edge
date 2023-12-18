@@ -1,0 +1,19 @@
+<table {{ $props.merge({ class: ['w-full','whitespace-no-wrap','data-table'] }).toAttrs() }}>
+    @if($slots.head)
+    <thead>
+        {{{ await $slots.head() }}}
+    </thead>
+    @end
+
+    @if($slots.body)
+    <tbody>
+        {{{ await $slots.body() }}}
+    </tbody>
+    @end
+
+    @if($slots.foot)
+    <tfoot>
+        {{{ await $slots.foot() }}}
+    </tfoot>
+    @end
+</table>

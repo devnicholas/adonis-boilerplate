@@ -1,0 +1,8 @@
+<td {{ $props.merge({ class: ['px-4','py-3'] }).toAttrs() }}>
+    @if($slots.main)
+        {{{ await $slots.main() }}}
+    @elseif($props.has('label'))
+        {{ label }}
+    @end
+</td>
+@if

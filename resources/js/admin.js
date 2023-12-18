@@ -5,6 +5,7 @@ import sidebar from './components/admin/sidebar'
 import theme from './components/admin/theme'
 import dropdown from './components/admin/dropdown'
 import alert from './components/admin/alert'
+import "./components/admin/table";
 
 window.Alpine = Alpine
 

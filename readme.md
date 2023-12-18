@@ -5,6 +5,7 @@ This is a boilerplate for AdonisJS with this features:
 - [TailwindCSS](https://tailwindcss.com/)
 - [AlpineJS](https://alpinejs.dev/)
 - Icons by [Heroicons](https://heroicons.dev/)
+- Table component with [DataTables](https://datatables.net/)
 - Authentication system
 - Users CRUD
 - Forgot Password

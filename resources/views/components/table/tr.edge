@@ -1,0 +1,8 @@
+@let(classes = ['text-gray-700','dark:text-gray-400'])
+@if(await $props.has('isHeader'))
+    @assign(classes = ['text-xs','font-semibold','tracking-wide','text-left','text-gray-500','uppercase','border-b','dark:border-gray-700','bg-gray-50','dark:text-gray-400','dark:bg-gray-800']) 
+@end
+
+<tr {{ $props.except(['isHeader']).merge({ class: classes }).toAttrs() }}>
+    {{{ await $slots.main() }}}
+</tr>
